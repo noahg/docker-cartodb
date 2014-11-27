@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SUBDOMAIN="dev"
+SUBDOMAIN="cartodb"
 PASSWORD="pass"
 ADMIN_PASSWORD="pass"
 EMAIL="dev@example.com"
