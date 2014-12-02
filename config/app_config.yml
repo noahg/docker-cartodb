@@ -6,36 +6,36 @@ defaults: &defaults
   mandatory_keys:     [layer_opts, sql_api, varnish_management, redis, session_domain]
   session_domain:     '.empowerengine.com'
   secret_token:       '71c2b25921b84a1cb21c71503ab8fb23'
-  account_host:       'localhost:3000'
+  account_host:       'empowerengine.com'
   account_path:       '/account'
   watcher:
     ttl:              60
   tiler:
     internal:
       protocol:      'http'
-      domain:        'localhost'
+      domain:        'empowerengine.com'
       port:          '8181'
-      host:          '127.0.0.1'
+      host:          'empowerengine.com'
       verifycert:     false
     private:
       protocol:      'http'
-      domain:        'localhost'
+      domain:        'empowerengine.com'
       port:          '8181'
       verifycert:     false
     public:
       protocol:      'http'
-      domain:        'localhost'
+      domain:        'empowerengine.com'
       port:          '8181'
       verifycert:     false
   sql_api:
     private:
       protocol:   'http'
-      domain:     'localhost'
+      domain:     'empowerengine.com'
       endpoint:   '/api/v1/sql'
       port:       8080
     public:
       protocol:   'http'
-      domain:     'localhost'
+      domain:     'empowerengine.com'
       endpoint:   '/api/v1/sql'
       port:       8080
   api_requests_service_url: ''
@@ -133,12 +133,12 @@ defaults: &defaults
         opacity:            0.99
         auto_bound:         false
         interactivity:      "cartodb_id"
-        debug:              false
+        debug:              true
         visible:            true
-        tiler_domain:       "localhost"
+        tiler_domain:       "empowerengine.com"
         tiler_port:         "8181"
         tiler_protocol:     "http"
-        sql_domain:         "localhost"
+        sql_domain:         "empowerengine.com"
         sql_port:           "8080"
         sql_protocol:       "http"
         extra_params:       { cache_policy: 'persist' }
