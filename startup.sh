@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PORT=3000
+PORT=80
 
 service postgresql start
 service redis-server start
