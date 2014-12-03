@@ -4,7 +4,10 @@ docker-cartodb
 That container provides a fully working cartodb development solution
 without the installation hassle.
 
-Just run and connect to http://cartodb.<yourdomain>.com/dashboard in the browser.
+Just: 
+1. Run the container, as instructed below.
+2. Setup a DNS sudomain record for cartodb pointing to your server's ip address.
+3. Connect to http://cartodb.yourdomain.com/dashboard in the browser.
 
 The default login is dev/pass. You may want to change it when you'll run
 it for the outside.
