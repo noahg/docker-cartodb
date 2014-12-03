@@ -1,7 +1,7 @@
 var config = {
      environment: 'development'
     ,port: 8181
-    ,host: '127.0.0.1'
+    ,host: ''
     ,uv_threadpool_size: undefined
     // Regular expression pattern to extract username
     // from hostname. Must have a single grabbing block.

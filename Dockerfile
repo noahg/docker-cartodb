@@ -57,18 +57,6 @@ ADD ./cartodb_pgsql.sh /tmp/cartodb_pgsql.sh
 RUN service postgresql start && /bin/su postgres -c \
       /tmp/cartodb_pgsql.sh && service postgresql stop
 
-# Install CartoDB API
-RUN git clone git://github.com/CartoDB/CartoDB-SQL-API.git && \
-      cd CartoDB-SQL-API && ./configure && npm install
-ADD ./config/CartoDB-dev.js \
-      /CartoDB-SQL-API/config/environments/development.js
-
-# Install Windshaft
-RUN git clone git://github.com/CartoDB/Windshaft-cartodb.git && \
-      cd Windshaft-cartodb && ./configure && npm install && mkdir logs
-ADD ./config/WS-dev.js \
-      /Windshaft-cartodb/config/environments/development.js
-
 # Install rvm
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 RUN curl -L https://get.rvm.io | bash -s stable --ruby
@@ -91,6 +79,18 @@ RUN git clone git://github.com/CartoDB/cartodb.git && \
             VERSION=$(/bin/bash -l -c 'ruby --version' | awk \
             '{print $2}' | sed -e 's,p55,-p55,' )' && cd /cartodb && \
             /bin/bash -l -c 'bundle install'"
+
+# Install CartoDB API
+RUN git clone git://github.com/CartoDB/CartoDB-SQL-API.git && \
+      cd CartoDB-SQL-API && ./configure && npm install
+ADD ./config/CartoDB-dev.js \
+      /CartoDB-SQL-API/config/environments/development.js
+
+# Install Windshaft
+RUN git clone git://github.com/CartoDB/Windshaft-cartodb.git && \
+      cd Windshaft-cartodb && ./configure && npm install && mkdir logs
+ADD ./config/WS-dev.js \
+      /Windshaft-cartodb/config/environments/development.js
 
 # Copy confs
 ADD ./config/app_config.yml /cartodb/config/app_config.yml
