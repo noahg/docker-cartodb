@@ -13,9 +13,9 @@ defaults: &defaults
   tiler:
     internal:
       protocol:      'http'
-      domain:        'empowerengine.com'
+      domain:        'localhost'
       port:          '8181'
-      host:          'empowerengine.com'
+      host:          'localhost'
       verifycert:     false
     private:
       protocol:      'http'
